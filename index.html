@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Balaton Shipping SA — Dry Cargo Chartering &amp; Shipbroking</title>
 <meta name="description" content="Balaton Shipping SA is an independent dry cargo shipbroking house: voyage chartering, tonnage placement and market coverage for shipowners, operators and charterers.">
+<meta property="og:title" content="Balaton Shipping SA — Dry Cargo Chartering &amp; Shipbroking">
+<meta property="og:description" content="Independent dry cargo shipbroking: voyage chartering, tonnage placement and daily market coverage.">
+<meta property="og:image" content="https://balaton-inc.com/img/hero.jpg">
+<meta property="og:url" content="https://balaton-inc.com/">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230e2438'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='18' fill='%23c8a24a' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
 <style>
   :root {
     --navy: #0e2438;
@@ -24,29 +30,34 @@
     line-height: 1.6;
   }
   .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+  img { max-width: 100%; display: block; }
 
   header {
-    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 70%, #1b3c58 100%);
+    background:
+      linear-gradient(165deg, rgba(10, 26, 42, 0.88) 0%, rgba(14, 36, 56, 0.72) 55%, rgba(16, 40, 62, 0.55) 100%),
+      url("img/hero.jpg") center 62% / cover no-repeat;
     color: #fff;
     padding: 20px 0;
   }
   .brand { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
   .brand .name { font-size: 1.25rem; font-weight: 700; letter-spacing: 0.06em; }
-  .brand .tag { color: #b8c7d4; font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; }
+  .brand .tag { color: #c9d6e0; font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; }
 
-  .hero { padding: 72px 0 80px; }
+  .hero { padding: 96px 0 110px; }
   .hero h1 {
     font-family: Georgia, "Times New Roman", serif;
     font-size: clamp(1.9rem, 4.5vw, 3rem);
     font-weight: 400;
     line-height: 1.2;
     max-width: 21em;
+    text-shadow: 0 2px 14px rgba(5, 15, 25, 0.45);
   }
   .hero p {
     margin-top: 20px;
     max-width: 40em;
-    color: #c4d2dd;
+    color: #dbe6ee;
     font-size: 1.05rem;
+    text-shadow: 0 1px 10px rgba(5, 15, 25, 0.5);
   }
   .hero .cta {
     display: inline-block;
@@ -54,6 +65,7 @@
     padding: 12px 28px;
     border: 1px solid var(--accent);
     color: var(--accent);
+    background: rgba(10, 26, 42, 0.45);
     text-decoration: none;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -71,8 +83,23 @@
   .rule { width: 48px; height: 3px; background: var(--accent); margin-bottom: 28px; }
 
   .about { border-bottom: 1px solid var(--line); }
-  .about p { max-width: 44em; color: var(--ink); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+  .about p { color: var(--ink); }
   .about p + p { margin-top: 14px; }
+  .about figure {
+    border: 1px solid var(--line);
+    border-bottom: 3px solid var(--accent);
+  }
+  .about figure img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 5; }
+  @media (max-width: 720px) {
+    .about-grid { grid-template-columns: 1fr; }
+    .about figure img { aspect-ratio: 16 / 10; }
+  }
 
   .services { background: var(--sand); }
   .grid {
@@ -84,11 +111,37 @@
   .card {
     background: #fff;
     border: 1px solid var(--line);
-    border-top: 3px solid var(--sea);
-    padding: 24px;
+    display: flex;
+    flex-direction: column;
   }
+  .card img { width: 100%; height: 170px; object-fit: cover; }
+  .card .body { padding: 20px 24px 24px; border-top: 3px solid var(--sea); }
   .card h3 { font-size: 1.02rem; margin-bottom: 8px; }
   .card p { color: var(--muted); font-size: 0.95rem; }
+
+  .band {
+    background:
+      linear-gradient(rgba(10, 26, 42, 0.45), rgba(10, 26, 42, 0.55)),
+      url("img/band.jpg") center 35% / cover no-repeat;
+    color: #fff;
+    padding: 110px 0;
+    text-align: center;
+  }
+  .band p {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.3rem, 3vw, 1.9rem);
+    letter-spacing: 0.02em;
+    text-shadow: 0 2px 14px rgba(5, 15, 25, 0.6);
+  }
+  .band .sub {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #d8c48f;
+    margin-top: 14px;
+    text-shadow: none;
+  }
 
   .contact .row { display: flex; flex-wrap: wrap; gap: 40px; margin-top: 8px; }
   .contact dt {
@@ -132,17 +185,22 @@
 </header>
 
 <section class="about">
-  <div class="wrap">
-    <h2>About us</h2>
-    <div class="rule"></div>
-    <p>We broker dry cargo business across bulk, breakbulk and multipurpose segments,
-    from coastal parcels to full cargoes. Our desk follows the market through a
-    continuous flow of vessel positions and cargo orders received daily from owners,
-    operators and charterers worldwide, built up over more than a decade in the trade.</p>
-    <p>The desk is supported by Laycan AI, our in-house assistant that reads the
-    incoming flow, keeps positions and orders structured, and helps the broker put
-    the right ship against the right cargo — while every fixture decision stays with
-    a person.</p>
+  <div class="wrap about-grid">
+    <div>
+      <h2>About us</h2>
+      <div class="rule"></div>
+      <p>We broker dry cargo business across bulk, breakbulk and multipurpose segments,
+      from coastal parcels to full cargoes. Our desk follows the market through a
+      continuous flow of vessel positions and cargo orders received daily from owners,
+      operators and charterers worldwide, built up over more than a decade in the trade.</p>
+      <p>The desk is supported by Laycan AI, our in-house assistant that reads the
+      incoming flow, keeps positions and orders structured, and helps the broker put
+      the right ship against the right cargo — while every fixture decision stays with
+      a person.</p>
+    </div>
+    <figure>
+      <img src="img/about.jpg" alt="Geared bulk carrier under way, seen from above" loading="lazy">
+    </figure>
   </div>
 </section>
 
@@ -152,21 +210,37 @@
     <div class="rule"></div>
     <div class="grid">
       <div class="card">
-        <h3>Voyage chartering</h3>
-        <p>Fixing dry bulk and breakbulk cargoes: firm orders worked against suitable
-        open tonnage, offers and negotiations handled end to end.</p>
+        <img src="img/svc-chartering.jpg" alt="Laden bulk carrier under way in open sea" loading="lazy">
+        <div class="body">
+          <h3>Voyage chartering</h3>
+          <p>Fixing dry bulk and breakbulk cargoes: firm orders worked against suitable
+          open tonnage, offers and negotiations handled end to end.</p>
+        </div>
       </div>
       <div class="card">
-        <h3>Tonnage placement</h3>
-        <p>Employment for open vessels: positions circulated to the right charterers
-        and matched against live cargo orders in the desk's market window.</p>
+        <img src="img/svc-tonnage.jpg" alt="Bulk carrier alongside the berth under shore cranes" loading="lazy">
+        <div class="body">
+          <h3>Tonnage placement</h3>
+          <p>Employment for open vessels: positions circulated to the right charterers
+          and matched against live cargo orders in the desk's market window.</p>
+        </div>
       </div>
       <div class="card">
-        <h3>Market coverage</h3>
-        <p>Daily reading of positions and orders across basins — who is open, what is
-        moving, and where the market stands for a given size and trade.</p>
+        <img src="img/svc-market.jpg" alt="Geared bulk carrier passing a fairway buoy" loading="lazy">
+        <div class="body">
+          <h3>Market coverage</h3>
+          <p>Daily reading of positions and orders across basins — who is open, what is
+          moving, and where the market stands for a given size and trade.</p>
+        </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <p>Greek shipping tradition, working every basin.</p>
+    <p class="sub">Glyfada · Attica · Greece</p>
   </div>
 </section>
 
